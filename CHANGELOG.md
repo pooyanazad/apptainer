@@ -9,6 +9,10 @@ For older changes see the [archived Singularity change log](https://github.com/a
 
 Changes since 1.5.x
 
+- Fix `apptainer pull` failing when `APPTAINER_PULLDIR` is set and the
+  destination (`--name` or positional) is an absolute path. An absolute
+  destination now takes precedence over the pull directory instead of
+  being incorrectly joined below it.
 - Add a new %{BUILDARCH} macro to the yum/dnf and zypper templates.
   It resolves to the architecture of the image currently being built.
 - Add support for mounting archive files (tar, tar.gz, etc.) using
